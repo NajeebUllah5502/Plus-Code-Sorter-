@@ -21,7 +21,7 @@ def extract_country(code):
 
 if uploaded_file:
     try:
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_csv(uploaded_file, on_bad_lines='skip')
 
         if 'Plus Code' not in df.columns:
             st.error("CSV must contain a column named 'PlusCode'")
