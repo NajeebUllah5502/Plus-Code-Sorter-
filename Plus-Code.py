@@ -23,7 +23,7 @@ if uploaded_file:
     try:
         df = pd.read_csv(uploaded_file)
 
-        if 'PlusCode' not in df.columns:
+        if 'Plus Code' not in df.columns:
             st.error("CSV must contain a column named 'PlusCode'")
         else:
             st.success("CSV file loaded successfully!")
@@ -40,7 +40,7 @@ if uploaded_file:
             unrecognized = []
 
             for _, row in df.iterrows():
-                code = row['PlusCode']
+                code = row['Plus Code']
                 country = extract_country(code)
 
                 if country:
